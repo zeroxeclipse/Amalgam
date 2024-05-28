@@ -95,7 +95,7 @@
     <ClCompile Include="src\Hooks\CPrediction_RunCommand.cpp" />
     <ClCompile Include="src\Hooks\ModelRender_DrawModelExecute.cpp" />
     <ClCompile Include="src\Hooks\ViewRender_RenderView.cpp" />
-    <ClCompile Include="src\Hooks\Direct3DDevice9_EndScene.cpp" />
+    <ClCompile Include="src\Hooks\Direct3DDevice9_Present.cpp" />
     <ClCompile Include="src\Hooks\CTFPlayerPanel_GetTeam.cpp" />
     <ClCompile Include="src\Hooks\BaseClientDLL_FrameStageNotify.cpp" />
     <ClCompile Include="src\Hooks\EngineVGui_Paint.cpp" />
@@ -413,7 +413,7 @@
     <ClInclude Include="src\SDK\Definitions\Steam\ISteamApps.h" />
     <ClInclude Include="src\SDK\Definitions\Steam\ISteamClient.h" />
     <ClInclude Include="src\SDK\Definitions\Steam\ISteamAppList.h" />
-    <ClInclude Include="src\Hooks\Direct3DDevice9_EndScene.h" />
+    <ClInclude Include="src\Hooks\Direct3DDevice9_Present.h" />
     <ClInclude Include="src\SDK\Definitions\Interfaces\CTFGameRules.h" />
     <ClInclude Include="src\SDK\Definitions\Interfaces\ViewRenderBeams.h" />
   </ItemGroup>

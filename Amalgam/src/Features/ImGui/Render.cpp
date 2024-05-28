@@ -1,6 +1,6 @@
 #include "Render.h"
 
-#include "../../Hooks/Direct3DDevice9_EndScene.h"
+#include "../../Hooks/Direct3DDevice9_Present.h"
 #include <ImGui/imgui_impl_win32.h>
 #include "MaterialDesign/MaterialIcons.h"
 #include "MaterialDesign/IconDefinitions.h"
@@ -29,7 +29,6 @@ void CRender::Render(IDirect3DDevice9* pDevice)
 	LoadColors();
 	PushFont(FontRegular);
 
-	F::Visuals.DrawTickbaseBars();
 	F::Menu.Render();
 
 	PopFont();

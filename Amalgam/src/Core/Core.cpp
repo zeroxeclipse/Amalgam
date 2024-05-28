@@ -6,6 +6,7 @@
 #include "../Features/Commands/Commands.h"
 #include "../Features/ImGui/Menu/Menu.h"
 #include "../Features/Visuals/Visuals.h"
+#include "../Hooks/Direct3DDevice9_Present.h"
 
 void CCore::Load()
 {
@@ -13,7 +14,11 @@ void CCore::Load()
 
 	U::Signatures.Initialize();
 	U::Interfaces.Initialize();
+
+	MH_Initialize();
+	DirectX::Startup();
 	U::Hooks.Initialize();
+	DirectX::bIsReady.store(true);
 	U::ConVars.Initialize();
 	F::Materials.LoadMaterials();
 	F::Commands.Initialize();
@@ -27,6 +32,7 @@ void CCore::Load()
 void CCore::Unload()
 {
 	G::Unload = true;
+	DirectX::bIsReady.store(false);
 
 	U::Hooks.Unload();
 	U::ConVars.Unload();
