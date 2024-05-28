@@ -31,8 +31,6 @@
 #include "Interfaces/ViewRenderBeams.h"
 #include "Interfaces/VPhysics.h"
 
-#include <d3d9.h>
-
 class CNullInterfaces
 {
 public:
