@@ -21,7 +21,9 @@ MAKE_HOOK(BaseClientDLL_FrameStageNotify, U::Memory.GetVFunc(I::BaseClientDLL, 3
 			G::PunchAngles = pLocal->m_vecPunchAngle(); // use in aimbot
 			if (Vars::Visuals::Removals::ViewPunch.Value)
 				pLocal->m_vecPunchAngle() = Vec3(); // visual no-recoil
-			F::Resolver.FrameStageNotify(pLocal);
+			F::Resolver.FrameStageNotify(pLocal); 
+			// BUGBUG: Pixy; This will also crash in vphysics!
+			// Exception thrown at 0x00007FFB7467A08D (vphysics.dll) in tf_win64.exe: 0xC0000005: Access violation reading location 0x0000000000000000.
 			// CRASH: Exception thrown at 0x00007FFCD004E223 (client.dll) in tf_win64.exe: 0xC0000005: Access violation reading location 0x0000025800000000.
 			// CRASH: Exception thrown at 0x00007FFC5A09EED0 (client.dll) in tf_win64.exe: 0xC0000005: Access violation reading location 0x000001F636472562.
 			// crashes likely not fsn related
