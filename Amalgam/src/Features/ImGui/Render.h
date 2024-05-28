@@ -3,6 +3,8 @@
 #include <ImGui/imgui_impl_dx9.h>
 #include <ImGui/imgui.h>
 
+#include <atomic>
+
 class CRender
 {
 public:
@@ -12,7 +14,7 @@ public:
 	void LoadColors();
 	void LoadStyle();
 
-	int Cursor = 2;
+	std::atomic<int> m_iCursor = ATOMIC_VAR_INIT(0);
 
 	// Colors
 	ImColor Accent = { 255, 101, 101 };

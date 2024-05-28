@@ -82,7 +82,8 @@ MAKE_HOOK(VGuiSurface_SetCursor, U::Memory.GetVFunc(I::MatSystemSurface, 51), vo
 {
 	if (F::Menu.IsOpen)
 	{
-		switch (F::Render.Cursor)
+		auto iCursor = F::Render.m_iCursor.load();
+		switch(iCursor)
 		{
 		case 0: cursor = 2; break;
 		case 1: cursor = 3; break;

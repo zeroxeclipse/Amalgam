@@ -2307,7 +2307,8 @@ void CMenu::Render()
 		AddDraggable("Conditions", Vars::Menu::ConditionsDisplay, FGet(Vars::Menu::Indicators) & (1 << 4));
 		AddDraggable("Seed prediction", Vars::Menu::SeedPredictionDisplay, FGet(Vars::Menu::Indicators) & (1 << 5));
 
-		F::Render.Cursor = GetMouseCursor();
+		//F::Render.Cursor = GetMouseCursor();
+		F::Render.m_iCursor.store(ImGui::GetMouseCursor());
 	}
 	else
 		mActives.clear();

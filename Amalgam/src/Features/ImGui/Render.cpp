@@ -30,7 +30,7 @@ void CRender::Render(IDirect3DDevice9* pDevice)
 	PushFont(FontRegular);
 
 	F::Menu.Render();
-
+	
 	PopFont();
 
 	EndFrame();
