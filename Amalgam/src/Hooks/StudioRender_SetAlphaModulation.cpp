@@ -7,16 +7,15 @@ MAKE_HOOK(StudioRender_SetAlphaModulation, U::Memory.GetVFunc(I::StudioRender, 2
 		G::DrawingProps && 
 		!(Vars::Visuals::UI::CleanScreenshots.Value && I::EngineClient->IsTakingScreenshot()))
 	{
-		auto flVal = Vars::Colors::PropModulation.Value.a / 255.f * flAlpha;
+		// TODO: make these static?
+		auto PropVal = Vars::Colors::PropModulation.Value.a;
+		auto flHookAlpha = flAlpha;
 
-		if(flVal == 0.f)
+		if(PropVal || flHookAlpha)
 		{
-			flVal = 1.f;
+			auto flVal = PropVal / 255.f * flHookAlpha;
+			return CALL_ORIGINAL(ecx, flVal);
 		}
-
-		return CALL_ORIGINAL(ecx, flVal);
 	}
-		
-
 	CALL_ORIGINAL(ecx, flAlpha);
 }
